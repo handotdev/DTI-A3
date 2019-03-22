@@ -141,7 +141,7 @@ const problemFns = {};
 
 /*
  * PROBLEM 5
- * a) changeFive is a function taking two parameters: a number `num` and boolean (true/false value) `increase`.
+ * a) changeNum is a function taking two parameters: a number `num` and boolean (true/false value) `increase`.
  * if `increase` is positive, you double it and if it's negative you halve it. We've written the function below
  * for you already, but didn't use ES6 JavaScript syntax. Rewrite the function in changedNumFixed following these instructions:
  * 1. You'll have to change how the function is declared since you shouldn't be using var.
@@ -162,8 +162,12 @@ const problemFns = {};
   };
 
   /* Your p5 work starts here! */
-  var changeNumFixed = function(num, increase) {
-
+  let changeNumFixed = (num, increase) => {
+    if (increase) {
+       return num * 2;
+    } else {
+      return num / 2
+    }
   };
   /* Your p5 work ends here! */
 
@@ -204,16 +208,18 @@ const problemFns = {};
   function loopity_loop(words, replacement) {
     /* Your p6 work starts here! */
     for (var word in words) {
+
+      //Word doesn't go through the list like in Python. It returns an index.
       var sentence = words.join(" ");
-      var modified = sentence.replace(word, replacement);
+      var modified = sentence.replace(words[word], replacement);
       console.log(`   > ${modified}`);
     }
     /* Your p6 work ends here! */
 
     return (
-      typeof word === "undefined" &&
-      typeof sentence === "undefined" &&
-      typeof modified === "undefined"
+      typeof word !== "undefined" &&
+      typeof sentence !== "undefined" &&
+      typeof modified !== "undefined"
     );
   }
 
@@ -245,7 +251,9 @@ const problemFns = {};
       this.lastname = lastname;
     }
 
-    getName() {}
+    getName() {
+      return this.firstname + " " + this.lastname;
+    }
   }
 
   problemFns.p7 = function() {
@@ -314,9 +322,12 @@ const problemFns = {};
     return a + 32;
   }
 
-  /* Your p9 Code Starts Here */
-
-  /* Your p9 Code Ends Here */
+  /* Your p8 Code Starts Here */
+  function callback(res, data){
+    result = data.map(data => String.fromCharCode(shift_charcode(data)));
+    console.log(result.join(""));
+  }
+  /* Your p8 Code Ends Here */
 
   function p8() {
     Api.get_dataset(callback);
@@ -337,6 +348,9 @@ const problemFns = {};
    */
   function operate(arr) {
     /* Karma code starts here! */
+
+    return arr.reduce(function(a, b) {return a + b}) * 2 + 1
+
     /* Karma code ends here! */
   }
 
