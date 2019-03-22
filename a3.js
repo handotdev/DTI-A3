@@ -22,6 +22,17 @@ const problemFns = {};
 {
   /* Start Your P1 Code Here */
 
+  class Animal {
+  constructor(race) {
+    this.race = race;
+  }
+}
+
+  class Dog extends Animal{
+  constructor(race) {
+    super(race)
+  }
+}
   /* End Your P1 Code Here */
 
   function p1() {
@@ -45,10 +56,10 @@ const problemFns = {};
  */
 {
   const numbers = [0, 2, -1998];
-  
+
   // Begin your code here
 
-  let added = [];
+  let added = numbers.map(numbers => numbers + 1998);
 
   // End your code here
 
@@ -73,10 +84,11 @@ const problemFns = {};
 
   const P3 = {
     get_message(send_message) {
-      this.x = "Problem 3 works!";
+      x = "Problem 3 works!";
 
       setTimeout(function() {
-        send_message(this.x);
+        //This.x should be inside the new function OR it should just be x
+        send_message(x);
       }, 100);
     }
   };
@@ -105,20 +117,21 @@ const problemFns = {};
     /* p4 work starts here */
 
     let b;
+
     console.log(b); // null or undefined?
-    //[YOUR ANSWER]
+    //  ['undefined']
     b = {}; // What could you write in one line using b to output undefined?
-    // [YOUR ANSWER]
+    // ['b.x']
     null == undefined; // True or False? Why?
-    // [YOUR ANSWER]
+    // [True because they are loosely equal (==) as they are both falsy values and primitives]
     null === undefined; // True or False? Why?
-    // [YOUR ANSWER]
+    // [False because they are not exactly the same (===) as null is a value that means nothing and undefined means no value given]
     5 == "5"; // True or False? Why? What can you do to make it not true or false (whichever you chose)?
-    // [YOUR ANSWER]
+    // [True because == compares values regardless of type. You can make it false by replacing it with a strict comparison (===)]
 
     // When you are done with your above answers set this to true.
 
-    let done = false;
+    let done = true;
 
     /* p4 work ends here */
 
@@ -150,8 +163,8 @@ const problemFns = {};
 
   /* Your p5 work starts here! */
   var changeNumFixed = function(num, increase) {
-    
-  }; 
+
+  };
   /* Your p5 work ends here! */
 
   function p5() {
