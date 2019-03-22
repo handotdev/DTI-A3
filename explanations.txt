@@ -1,0 +1,24 @@
+1. b) Object.getPrototypeOf is a javascript method that returns the value of the internal Prototype property of an object.
+      Prototypes are used by JavaScript to relate object features from each other.
+      When a Dog object is created, its Prototype property is Animal because the Dog class is a "extension" (subclass) of the Animal class.
+      The constructor of the Dog class is a method to create an new object. And because it is a subclass, it also contains all of the values and methods (features) of the Animal class.
+      The operator === is used to strictly compare that the Prototype property of the constructor method in a Dog object is equal to Animal.
+
+3. b) The this keyword is used to refer to the "owner" of the method. Its scope is within its own method.
+      Because this.x is defined within get_message, it is unaccessible by the function within SetTimeout.
+      Fix by either changing both this.x to x or moving "this.x = "Problem 3 works!";" to the function within setTimeout.
+      Replacing it with x would make it accessible across the entire get_message function and moving this.x would make both within the same scope.
+
+4. 1) ['']
+   2) ['b.x']
+   3) [True because they are loosely equal (==) as they are both falsy values and primitives]
+   4) [False because they are not exactly the same (===) as null is a value that means nothing and undefined means no value given]
+   5) [True because == compares values regardless of type. You can make it false by replacing it with a strict comparison (===)]
+
+6. d) word in "for (var word in words)" iterates a series of indices from 0 to words.length-1. It is not like python where it iterates with the elements within the list.
+      "sentence.replace(word, replacement)" would not replace anything because word is just a series of ints.
+      Fix by replacing "sentence.replace(word, replacement)" with sentence.replace(words[word], replacement). This way, the elements in words are being iterated.
+
+8. b)  Array.prototype.map creates a new array by applying a function on every element in an existing array.
+       In this instance, data.map uses the argument data and applies the functions shift_charcode and String.fromCharCode to convert the elements from data into char codes.
+       The result is joined together and printed.

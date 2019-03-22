@@ -24,7 +24,6 @@ const problemFns = {};
 
   class Animal {
   constructor(race) {
-    this.race = race;
   }
 }
 
@@ -90,6 +89,7 @@ const problemFns = {};
         //This.x should be inside the new function OR it should just be x
         send_message(x);
       }, 100);
+
     }
   };
 
@@ -209,7 +209,6 @@ const problemFns = {};
     /* Your p6 work starts here! */
     for (var word in words) {
 
-      //Word doesn't go through the list like in Python. It returns an index.
       var sentence = words.join(" ");
       var modified = sentence.replace(words[word], replacement);
       console.log(`   > ${modified}`);
@@ -350,6 +349,7 @@ const problemFns = {};
     /* Karma code starts here! */
 
     return arr.reduce(function(a, b) {return a + b}) * 2 + 1
+
 
     /* Karma code ends here! */
   }
